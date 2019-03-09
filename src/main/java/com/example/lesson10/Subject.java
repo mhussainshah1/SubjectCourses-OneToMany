@@ -20,6 +20,14 @@ public class Subject {
   @OneToMany(mappedBy = "subject")
   public Set<Course> courses;
 
+  public Subject() {
+  }
+
+  public Subject(@NotNull @Size(min = 4) String title, Set<Course> courses) {
+    this.title = title;
+    this.courses = courses;
+  }
+
   public long getId() {
     return id;
   }

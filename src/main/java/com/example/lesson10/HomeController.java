@@ -9,7 +9,10 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.annotation.PostConstruct;
 import javax.validation.Valid;
+import java.util.HashSet;
+import java.util.Set;
 
 @Controller
 public class HomeController {
@@ -90,6 +93,28 @@ public class HomeController {
         return "redirect:/";
     }
 
+    @PostConstruct
+    public void fillTables(){
+        /*Set<Course> courses = new HashSet<>();
+        Course course = new Course("Java and Springboots","Melisa A. Fung","you will learn Java SE and EE", 3,);
+        courses.add(course);
+        Subject subject = new Subject("Spring Boot Camp",courses);
+        subjectRepository.save(subject);
+
+        courses = new HashSet<>();
+        course = new Course("OOP in C++","Dave A. Wolf","C , C++ and OOP",3);
+        courses.add(course);
+        course = new Course("Data Structure","Rossmie S. Joseph","you will learn Sort Search",3);
+        courses.add(course);
+        subject = new Subject("Master in IT", courses);
+        subjectRepository.save(subject);
+
+        courses = new HashSet<>();
+        course = new Course("Kathak dancing","Shristi R. Devi","you will learn folk dancing", 4);
+        courses.add(course);
+        subject = new Subject("Bachelour in IT", courses);
+        subjectRepository.save(subject);*/
+    }
 }
 
 
