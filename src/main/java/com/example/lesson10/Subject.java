@@ -3,6 +3,7 @@ package com.example.lesson10;
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -23,9 +24,9 @@ public class Subject {
   public Subject() {
   }
 
-  public Subject(@NotNull @Size(min = 4) String title, Set<Course> courses) {
+  public Subject(@NotNull @Size(min = 4) String title) {
     this.title = title;
-    this.courses = courses;
+    courses = new HashSet<>();
   }
 
   public long getId() {
