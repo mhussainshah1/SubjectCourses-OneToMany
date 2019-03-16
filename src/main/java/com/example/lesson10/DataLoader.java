@@ -4,6 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
+import java.util.HashSet;
+import java.util.Set;
+
 @Component
 public class DataLoader implements CommandLineRunner {
 
@@ -15,10 +18,11 @@ public class DataLoader implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-//        //Set<Course> courses = new HashSet<>();
+//        Set<Course> courses = new HashSet<>();
 //        Course course = new Course("Java and Springboots","Melisa A. Fung","you will learn Java SE and EE", 3);
+//        courses.add(course);
         Subject subject = new Subject("Spring Boot Camp");
-//        subject.getCourses().add(course);
+//        subject.setCourses(courses);
 //        courseRepository.save(course);
         subjectRepository.save(subject);
 //

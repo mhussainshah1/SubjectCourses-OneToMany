@@ -52,4 +52,13 @@ public class Subject {
   public void setCourses(Set<Course> courses) {
     this.courses = courses;
   }
+
+  @Override
+  public String toString() {
+    return "Subject{" +
+            "id=" + id +
+            ", title='" + title + '\'' +
+            ", courses=" + courses +
+            '}';
+  }
 }

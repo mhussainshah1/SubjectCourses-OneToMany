@@ -88,4 +88,17 @@ public class Course {
     public void setSubject(Subject subject) {
         this.subject = subject;
     }
+
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "id=" + id +
+                ", title='" + title + '\'' +
+                ", instructor='" + instructor + '\'' +
+                ", description='" + description + '\'' +
+                ", credit=" + credit +
+                ", subject=" + subject +
+                '}';
+    }
 }

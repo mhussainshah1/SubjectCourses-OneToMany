@@ -11,8 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import javax.annotation.PostConstruct;
 import javax.validation.Valid;
-import java.util.HashSet;
-import java.util.Set;
 
 @Controller
 public class HomeController {
@@ -38,7 +36,8 @@ public class HomeController {
     }
 
     @PostMapping("/process")
-    public String processForm(@Valid Course course, BindingResult result,
+    public String processForm(@Valid Course course,
+                              BindingResult result,
                               Model model){
         if(result.hasErrors()){
             model.addAttribute("subjects", subjectRepository.findAll());
@@ -47,8 +46,6 @@ public class HomeController {
         courseRepository.save(course);
         return "redirect:/";
     }
-
-
 
     @GetMapping("/addsubject")
     public String subjectForm(Model model){
@@ -70,9 +67,6 @@ public class HomeController {
         subjectRepository.save(subject);
         return "redirect:/";
     }
-
-
-
 
     @RequestMapping("/detail/{id}")
     public String showCourse(@PathVariable("id") long id, Model model){
